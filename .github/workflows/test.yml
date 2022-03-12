@@ -4,9 +4,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Set Up GCP Credentials
+        uses: ./
         with:
-          fetch-depth: 0
-      - uses: ./
-        with:
-          foo: bar
+          service-account-key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+      - name: Use GCP Credentials
+        run: |
+          if [ $GOOGLE_APPLICATION_CREDENTIALS != '/etc/google-credentials.json' ]; then
+            echo "GOOGLE_APPLICATION_CREDENTIALS has unexpected value: $GOOGLE_APPLICATION_CREDENTIALS"
+            exit 1
+          fi
