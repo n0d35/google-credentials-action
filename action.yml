@@ -1,5 +1,5 @@
 name: 'Google Credentials'
-description: 'Sets Up GCP Credentials for Subsequent Steps'
+description: 'Set Up GCP Credentials for Subsequent Steps'
 branding:
   icon: lock
   color: green
