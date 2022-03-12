@@ -2,4 +2,17 @@
 
 # Google Credentials Action
 
-Action for making GCP credentials available to subsequent workflow steps.
+This action sets up GCP credentials for use by subsequent steps.
+
+## Usage
+
+```yml
+- name: Set Up GCP Credentials
+  uses: n0d35/google-credentials-action@v1
+  with:
+    service-account-key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+
+- name: Use GCP Credentials
+  run: |
+    echo "Path to credentials: $GOOGLE_APPLICATION_CREDENTIALS"
+```
