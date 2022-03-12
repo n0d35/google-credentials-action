@@ -1,5 +1,5 @@
 name: 'Google Credentials'
-description: 'Configure GCP Credentials for Subsequent Steps'
+description: 'Sets Up GCP Credentials for Subsequent Steps'
 inputs:
   service-account-key:
     description: 'Service Account Key'
