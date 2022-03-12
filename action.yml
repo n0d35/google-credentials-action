@@ -1,12 +1,18 @@
-name: 'Hello'
-description: 'Say hello'
+name: 'Google Credentials'
+description: 'Configure GCP Credentials for Subsequent Steps'
 inputs:
-  foo:
-    description: 'Foo'
+  service-account-key:
+    description: 'Service Account Key'
     required: true
 runs:
   using: "composite"
   steps:
     - shell: bash
+      env:
+        SERVICE_ACCOUNT_KEY: ${{ inputs.service-account-key }}
       run: |
-        echo "Hello, World!"
+        # Store Credentials
+        echo $SERVICE_ACCOUNT_KEY | sudo tee /etc/google-credentials.json > /dev/null
+
+        # Export EV
+        echo 'GOOGLE_APPLICATION_CREDENTIALS=/etc/google-credentials.json' >> $GITHUB_ENV
