@@ -1,0 +1,10 @@
+name: Versioning
+on:
+  release:
+    types: [published, edited]
+jobs:
+  tagger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Promote Major Tag
+        uses: Actions-R-Us/actions-tagger@latest

@@ -1,0 +1,12 @@
+name: 'Hello'
+description: 'Say hello'
+inputs:
+  foo:
+    description: 'Foo'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        echo "Hello, World!"
