@@ -1,6 +1,6 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/nodes-app/google-credentials-action)
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/nodes-app/action-google-credentials)
 
-# google-credentials-action
+# action-google-credentials
 
 This action sets up GCP credentials for use by subsequent steps.
 
@@ -8,7 +8,7 @@ This action sets up GCP credentials for use by subsequent steps.
 
 ```yml
 - name: Set Up GCP Credentials
-  uses: nodes-app/google-credentials-action@v1
+  uses: nodes-app/action-google-credentials@v1
   with:
     service-account-key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
 
